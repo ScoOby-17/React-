@@ -1,16 +1,76 @@
-# React + Vite
+# Click and Non-Click Event Handling in React
+Event Handling in React is the process of responding to user actions such as clicking a button, typing in an input field, hovering over an element, or submitting a form.
+React uses camelCase for event names, and event handlers are passed as JavaScript functions.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+1. Click Event Handling
+The onClick event is triggered when the user clicks an element.
 
-Currently, two official plugins are available:
+Example
+function App() {
+  function handleClick() {
+    alert("Button Clicked!");
+  }
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+  return (
+    <button onClick={handleClick}>
+      Click Me
+    </button>
+  );
+}
 
-## React Compiler
+Output:
+When the button is clicked, an alert box displays "Button Clicked!".
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Non-Click Event Handling
+React supports many events other than click events.
 
-## Expanding the Oxlint configuration
+(a) onChange Event
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Triggered when the value of an input field changes.
+
+function App() {
+  function handleChange(event) {
+    console.log(event.target.value);
+  }
+
+  return (
+    <input
+      type="text"
+      onChange={handleChange}
+      placeholder="Enter your name"
+    />
+  );
+}
+
+(b) onMouseOver Event
+
+Triggered when the mouse pointer moves over an element.
+
+function App() {
+  function handleMouseOver() {
+    alert("Mouse is over the heading!");
+  }
+
+  return (
+    <h1 onMouseOver={handleMouseOver}>
+      Hover Over Me
+    </h1>
+  );
+}
+
+(c) onSubmit Event
+
+Triggered when a form is submitted.
+
+function App() {
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert("Form Submitted");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
