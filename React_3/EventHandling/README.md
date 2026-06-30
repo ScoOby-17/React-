@@ -5,72 +5,15 @@ React uses camelCase for event names, and event handlers are passed as JavaScrip
 1. Click Event Handling
 The onClick event is triggered when the user clicks an element.
 
-Example
-function App() {
-  function handleClick() {
-    alert("Button Clicked!");
-  }
-
-  return (
-    <button onClick={handleClick}>
-      Click Me
-    </button>
-  );
-}
-
-Output:
-When the button is clicked, an alert box displays "Button Clicked!".
-
 2. Non-Click Event Handling
 React supports many events other than click events.
 
-(a) onChange Event
+# State in React
+State is a built-in feature in React that allows a component to store and manage data that can change over time. When the state changes, React automatically re-renders the component to display the updated data.
 
-Triggered when the value of an input field changes.
+State is mutable, which means its value can be changed using the state update function.
 
-function App() {
-  function handleChange(event) {
-    console.log(event.target.value);
-  }
-
-  return (
-    <input
-      type="text"
-      onChange={handleChange}
-      placeholder="Enter your name"
-    />
-  );
-}
-
-(b) onMouseOver Event
-
-Triggered when the mouse pointer moves over an element.
-
-function App() {
-  function handleMouseOver() {
-    alert("Mouse is over the heading!");
-  }
-
-  return (
-    <h1 onMouseOver={handleMouseOver}>
-      Hover Over Me
-    </h1>
-  );
-}
-
-(c) onSubmit Event
-
-Triggered when a form is submitted.
-
-function App() {
-  function handleSubmit(event) {
-    event.preventDefault();
-    alert("Form Submitted");
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <button type="submit">Submit</button>
-    </form>
-  );
-}
+Why Use State?
+To store dynamic data.
+To update the UI automatically when data changes.
+To manage user interactions such as clicks, form inputs, and counters.

@@ -1,0 +1,177 @@
+/* ===== Base / Layout ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #e9ecf5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.todo-container {
+  max-width: 620px;
+  margin: 48px auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(30, 41, 59, 0.08);
+  padding: 40px 44px 36px;
+}
+
+.todo-container h3 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e2433;
+}
+
+.todo-container label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5b6072;
+  margin-bottom: 10px;
+}
+
+/* ===== Input row ===== */
+.todo-container input[type="text"] {
+  width: 60%;
+  padding: 14px 18px;
+  margin-right: 12px;
+  background: #f5f6fa;       /* light field background */
+  border: 1.5px solid #e3e5ee;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #1e2433;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.todo-container input[type="text"]::placeholder {
+  color: #b2b6c4;
+}
+
+.todo-container input[type="text"]:focus {
+  background: #ffffff;
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.12);
+}
+
+.todo-container > button[type="submit"] {
+  padding: 14px 26px;
+  background: #5b4fe8;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.todo-container > button[type="submit"]:hover {
+  background: #4d41dc;
+}
+
+.todo-container > button[type="submit"]:active {
+  transform: scale(0.97);
+}
+
+/* ===== Task list ===== */
+.todo-container ul {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  border: 1px solid #eef0f6;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.todo-container li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: #ffffff;
+  font-size: 16px;
+  color: #1e2433;
+}
+
+.todo-container li + li {
+  border-top: 1px solid #eef0f6;
+}
+
+/* checkbox */
+.todo-container li input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  accent-color: #6c63ff;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-container li button {
+  margin-left: auto;
+  padding: 9px 18px;
+  background: #fdeeee;
+  color: #e34850;
+  border: 1px solid #f8d6d6;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.todo-container li button:hover {
+  background: #fbdcdc;
+}
+
+.todo-container li button:active {
+  transform: scale(0.97);
+}
+
+/* strike-through completed tasks */
+.todo-container li:has(input[type="checkbox"]:checked) {
+  color: #b2b6c4;
+  text-decoration: line-through;
+}
+
+/* ===== Reset button ===== */
+.todo-container > button:last-of-type {
+  width: 100%;
+  padding: 16px;
+  background: #fdeeee;
+  color: #e34850;
+  border: 1px solid #f8d6d6;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.todo-container > button:last-of-type:hover {
+  background: #fbdcdc;
+}
+
+.todo-container > button:last-of-type:active {
+  transform: scale(0.99);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 520px) {
+  .todo-container {
+    margin: 20px 16px;
+    padding: 28px 22px;
+  }
+
+  .todo-container input[type="text"] {
+    width: 100%;
+    margin: 0 0 12px;
+  }
+
+  .todo-container > button[type="submit"] {
+    width: 100%;
+  }
+}
